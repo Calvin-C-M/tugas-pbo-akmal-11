@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package nilai;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -27,22 +28,282 @@ public class Main extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        header = new javax.swing.JPanel();
+        judul = new javax.swing.JLabel();
+        formBox = new javax.swing.JPanel();
+        labelNama = new javax.swing.JLabel();
+        labelNpm = new javax.swing.JLabel();
+        labelNilaiTugas = new javax.swing.JLabel();
+        labelNilaiUts = new javax.swing.JLabel();
+        labelNilaiUas = new javax.swing.JLabel();
+        inputNama = new javax.swing.JTextField();
+        inputNpm = new javax.swing.JTextField();
+        inputNilaiTugas = new javax.swing.JTextField();
+        inputNilaiUts = new javax.swing.JTextField();
+        inputNilaiUas = new javax.swing.JTextField();
+        cekNilaiButton = new javax.swing.JButton();
+        resetButton = new javax.swing.JButton();
+        hasilBox = new javax.swing.JPanel();
+        labelHasilNama = new javax.swing.JLabel();
+        labelHasilNpm = new javax.swing.JLabel();
+        labelHasilNilaiAkhir = new javax.swing.JLabel();
+        labelHasilHurufMutu = new javax.swing.JLabel();
+        hasilNama = new javax.swing.JLabel();
+        hasilNpm = new javax.swing.JLabel();
+        hasilNilaiAkhir = new javax.swing.JLabel();
+        hasilHurufMutu = new javax.swing.JLabel();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        header.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+
+        judul.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        judul.setText("Mencari Huruf Mutu");
+
+        javax.swing.GroupLayout headerLayout = new javax.swing.GroupLayout(header);
+        header.setLayout(headerLayout);
+        headerLayout.setHorizontalGroup(
+            headerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, headerLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(judul)
+                .addGap(235, 235, 235))
+        );
+        headerLayout.setVerticalGroup(
+            headerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(headerLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(judul, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        formBox.setBorder(javax.swing.BorderFactory.createTitledBorder("Form"));
+
+        labelNama.setText("Nama Mahasiswa");
+
+        labelNpm.setText("NPM");
+
+        labelNilaiTugas.setText("Nilai Tugas");
+
+        labelNilaiUts.setText("Nilai UTS");
+
+        labelNilaiUas.setText("Nilai UAS");
+
+        cekNilaiButton.setText("Cek Nilai");
+        cekNilaiButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cekNilaiButtonActionPerformed(evt);
+            }
+        });
+
+        resetButton.setText("Reset");
+        resetButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                resetButtonActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout formBoxLayout = new javax.swing.GroupLayout(formBox);
+        formBox.setLayout(formBoxLayout);
+        formBoxLayout.setHorizontalGroup(
+            formBoxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(formBoxLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(formBoxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(labelNama, javax.swing.GroupLayout.DEFAULT_SIZE, 111, Short.MAX_VALUE)
+                    .addComponent(labelNilaiTugas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(labelNpm, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(labelNilaiUts, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(labelNilaiUas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(formBoxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(formBoxLayout.createSequentialGroup()
+                        .addComponent(cekNilaiButton)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(resetButton)
+                        .addGap(0, 43, Short.MAX_VALUE))
+                    .addComponent(inputNama)
+                    .addComponent(inputNpm)
+                    .addComponent(inputNilaiTugas)
+                    .addComponent(inputNilaiUts)
+                    .addComponent(inputNilaiUas))
+                .addContainerGap())
+        );
+        formBoxLayout.setVerticalGroup(
+            formBoxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(formBoxLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(formBoxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(labelNama)
+                    .addComponent(inputNama, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(formBoxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(labelNpm)
+                    .addComponent(inputNpm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(formBoxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(labelNilaiTugas)
+                    .addComponent(inputNilaiTugas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(formBoxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(labelNilaiUts)
+                    .addComponent(inputNilaiUts, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(formBoxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(labelNilaiUas)
+                    .addComponent(inputNilaiUas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(formBoxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cekNilaiButton)
+                    .addComponent(resetButton))
+                .addContainerGap(11, Short.MAX_VALUE))
+        );
+
+        hasilBox.setBorder(javax.swing.BorderFactory.createTitledBorder("Hasil"));
+        hasilBox.setPreferredSize(new java.awt.Dimension(337, 208));
+
+        labelHasilNama.setText("Nama Mahasiswa");
+
+        labelHasilNpm.setText("NPM");
+
+        labelHasilNilaiAkhir.setText("Nilai Akhir");
+
+        labelHasilHurufMutu.setText("Huruf Mutu");
+
+        hasilNama.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        hasilNama.setPreferredSize(new java.awt.Dimension(40, 18));
+
+        hasilNpm.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        hasilNpm.setPreferredSize(new java.awt.Dimension(40, 18));
+
+        hasilNilaiAkhir.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        hasilNilaiAkhir.setPreferredSize(new java.awt.Dimension(40, 18));
+
+        hasilHurufMutu.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        hasilHurufMutu.setPreferredSize(new java.awt.Dimension(40, 18));
+
+        javax.swing.GroupLayout hasilBoxLayout = new javax.swing.GroupLayout(hasilBox);
+        hasilBox.setLayout(hasilBoxLayout);
+        hasilBoxLayout.setHorizontalGroup(
+            hasilBoxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(hasilBoxLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(hasilBoxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(labelHasilNama, javax.swing.GroupLayout.DEFAULT_SIZE, 110, Short.MAX_VALUE)
+                    .addComponent(labelHasilNpm, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(labelHasilNilaiAkhir, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(labelHasilHurufMutu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(hasilBoxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(hasilNama, javax.swing.GroupLayout.DEFAULT_SIZE, 193, Short.MAX_VALUE)
+                    .addComponent(hasilNpm, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(hasilNilaiAkhir, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(hasilHurufMutu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+        hasilBoxLayout.setVerticalGroup(
+            hasilBoxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(hasilBoxLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(hasilBoxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(labelHasilNama)
+                    .addComponent(hasilNama, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(hasilBoxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(labelHasilNpm)
+                    .addComponent(hasilNpm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(hasilBoxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(labelHasilNilaiAkhir)
+                    .addComponent(hasilNilaiAkhir, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(hasilBoxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(labelHasilHurufMutu)
+                    .addComponent(hasilHurufMutu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(71, Short.MAX_VALUE))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(header, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(formBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(hasilBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(header, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(formBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(hasilBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void cekNilaiButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cekNilaiButtonActionPerformed
+        Student mahasiswa=new Student();
+        try {
+            mahasiswa.setNama(inputNama.getText());
+            mahasiswa.setNpm(inputNpm.getText());
+            mahasiswa.getTugas().setValue(Double.parseDouble(inputNilaiTugas.getText()));
+            mahasiswa.getUts().setValue(Double.parseDouble(inputNilaiUts.getText()));
+            mahasiswa.getUas().setValue(Double.parseDouble(inputNilaiUas.getText()));
+            
+            // Jika pada input tugas, uts dan uas ada yang memasukkan nilai x < 0 && x > 100
+            if(nilaiIsInvalid(mahasiswa.getTugas()) || nilaiIsInvalid(mahasiswa.getUts()) || nilaiIsInvalid(mahasiswa.getUas())) {
+                throw new InvalidNilaiException(); // Melempar sebuah exception
+            }
+            
+            double nilaiAkhir=mahasiswa.getNilaiAkhir().getValue();
+            
+            hasilNama.setText(mahasiswa.getNama());
+            hasilNpm.setText(mahasiswa.getNpm());
+            
+            hasilNilaiAkhir.setText(String.valueOf(nilaiAkhir));
+            hasilHurufMutu.setText(String.valueOf(mahasiswa.getHurufMutu(nilaiAkhir)));
+        } catch(NumberFormatException ex) {
+            JOptionPane.showMessageDialog(null, "Yang anda input bukan merupakan nilai numerik, silahkan coba lagi",
+                                         "Ada kesalahan!", 1);
+        } catch(InvalidNilaiException ex) {
+            JOptionPane.showMessageDialog(null, ex.getMessage(), "Ada kesalahan!", 1);
+        }
+    }//GEN-LAST:event_cekNilaiButtonActionPerformed
+
+    private void resetButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_resetButtonActionPerformed
+        // Reset input form
+        inputNama.setText("");
+        inputNpm.setText("");
+        inputNilaiTugas.setText("");
+        inputNilaiUts.setText("");
+        inputNilaiUas.setText("");
+        
+        // Reset hasil form
+        hasilNama.setText("");
+        hasilNpm.setText("");
+        hasilNilaiAkhir.setText("");
+        hasilHurufMutu.setText("");
+        
+        // Focus pada text field "inputNama"
+        inputNama.requestFocus();
+    }//GEN-LAST:event_resetButtonActionPerformed
+
+    public boolean nilaiIsInvalid(Nilai nilai) {
+        return nilai.getValue() < 0 || nilai.getValue() > 100;
+    }
+    
     /**
      * @param args the command line arguments
      */
@@ -79,5 +340,29 @@ public class Main extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton cekNilaiButton;
+    private javax.swing.JPanel formBox;
+    private javax.swing.JPanel hasilBox;
+    private javax.swing.JLabel hasilHurufMutu;
+    private javax.swing.JLabel hasilNama;
+    private javax.swing.JLabel hasilNilaiAkhir;
+    private javax.swing.JLabel hasilNpm;
+    private javax.swing.JPanel header;
+    private javax.swing.JTextField inputNama;
+    private javax.swing.JTextField inputNilaiTugas;
+    private javax.swing.JTextField inputNilaiUas;
+    private javax.swing.JTextField inputNilaiUts;
+    private javax.swing.JTextField inputNpm;
+    private javax.swing.JLabel judul;
+    private javax.swing.JLabel labelHasilHurufMutu;
+    private javax.swing.JLabel labelHasilNama;
+    private javax.swing.JLabel labelHasilNilaiAkhir;
+    private javax.swing.JLabel labelHasilNpm;
+    private javax.swing.JLabel labelNama;
+    private javax.swing.JLabel labelNilaiTugas;
+    private javax.swing.JLabel labelNilaiUas;
+    private javax.swing.JLabel labelNilaiUts;
+    private javax.swing.JLabel labelNpm;
+    private javax.swing.JButton resetButton;
     // End of variables declaration//GEN-END:variables
 }
