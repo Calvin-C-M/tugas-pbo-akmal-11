@@ -10,8 +10,8 @@ package calc;
  * @author Calvin C M
  */
 public class Kalkulator {
-    private int value1;
-    private int value2;
+    private double value1;
+    private double value2;
     private String operand;
 
     Kalkulator() {
@@ -20,17 +20,17 @@ public class Kalkulator {
         this.operand="";
     }
 
-    Kalkulator(int val1, int val2, String opr) {
+    Kalkulator(double val1, double val2, String opr) {
         this.value1=val1;
         this.value2=val2;
         this.operand=opr;
     }
 
-    public void setValue1(int value1) {
+    public void setValue1(double value1) {
         this.value1 = value1;
     }
 
-    public void setValue2(int value2) {
+    public void setValue2(double value2) {
         this.value2 = value2;
     }
 
@@ -42,11 +42,11 @@ public class Kalkulator {
         return operand;
     }
 
-    public int getValue1() {
+    public double getValue1() {
         return value1;
     }
 
-    public int getValue2() {
+    public double getValue2() {
         return value2;
     }
 }
