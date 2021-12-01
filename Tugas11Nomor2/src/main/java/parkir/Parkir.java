@@ -63,8 +63,8 @@ public class Parkir {
 
     public Waktu getLamaParkir() {
         int newJam=this.pulang.getJam()-this.datang.getJam();
-        int newMenit=this.pulang.getMenit()-this.datang.getMenit();
-        int newDetik=this.pulang.getDetik()-this.datang.getDetik();
+        int newMenit=Math.abs(this.pulang.getMenit()-this.datang.getMenit());
+        int newDetik=Math.abs(this.pulang.getDetik()-this.datang.getDetik());
 
         newMenit-=(newDetik < 0) ? 1 : 0;
         newJam-=(newMenit < 0) ? 1 : 0;
