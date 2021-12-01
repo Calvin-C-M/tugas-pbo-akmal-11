@@ -16,6 +16,7 @@ public class Main extends javax.swing.JFrame {
      * Creates new form Main
      */
     public Main() {
+        this.calcu=new Kalkulator();
         initComponents();
     }
 
@@ -400,11 +401,13 @@ public class Main extends javax.swing.JFrame {
 
     private void clearButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearButtonActionPerformed
         inputs.setText("");
+        this.calcu.setOperand("");
     }//GEN-LAST:event_clearButtonActionPerformed
 
     private void addButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addButtonActionPerformed
         this.calcu.setValue1(Integer.parseInt(inputs.getText()));
         this.calcu.setOperand("+");
+        inputs.setText("");
     }//GEN-LAST:event_addButtonActionPerformed
 
     private void equalsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_equalsActionPerformed
@@ -469,51 +472,61 @@ public class Main extends javax.swing.JFrame {
     private void subtractButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_subtractButtonActionPerformed
         this.calcu.setValue1(Integer.parseInt(inputs.getText()));
         this.calcu.setOperand("-");
+        inputs.setText("");
     }//GEN-LAST:event_subtractButtonActionPerformed
 
     private void multiplyButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_multiplyButtonActionPerformed
         this.calcu.setValue1(Integer.parseInt(inputs.getText()));
         this.calcu.setOperand("X");
+        inputs.setText("");
     }//GEN-LAST:event_multiplyButtonActionPerformed
 
     private void divideButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_divideButtonActionPerformed
         this.calcu.setValue1(Integer.parseInt(inputs.getText()));
         this.calcu.setOperand("/");
+        inputs.setText("");
     }//GEN-LAST:event_divideButtonActionPerformed
 
     private void sinButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sinButtonActionPerformed
         this.calcu.setValue1(Integer.parseInt(inputs.getText()));
         this.calcu.setOperand("sin");
+        this.equalsActionPerformed(evt);
     }//GEN-LAST:event_sinButtonActionPerformed
 
     private void cosButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cosButtonActionPerformed
         this.calcu.setValue1(Integer.parseInt(inputs.getText()));
         this.calcu.setOperand("cos");
+        this.equalsActionPerformed(evt);
     }//GEN-LAST:event_cosButtonActionPerformed
 
     private void tanButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tanButtonActionPerformed
         this.calcu.setValue1(Integer.parseInt(inputs.getText()));
         this.calcu.setOperand("tan");
+        this.equalsActionPerformed(evt);
     }//GEN-LAST:event_tanButtonActionPerformed
 
     private void powerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_powerButtonActionPerformed
         this.calcu.setValue1(Integer.parseInt(inputs.getText()));
         this.calcu.setOperand("^");
+        inputs.setText("");
     }//GEN-LAST:event_powerButtonActionPerformed
 
     private void rootButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rootButtonActionPerformed
         this.calcu.setValue1(Integer.parseInt(inputs.getText()));
         this.calcu.setOperand("v");
+        inputs.setText("");
     }//GEN-LAST:event_rootButtonActionPerformed
 
     private void factorialButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_factorialButtonActionPerformed
         this.calcu.setValue1(Integer.parseInt(inputs.getText()));
         this.calcu.setOperand("fac");
+        this.equalsActionPerformed(evt);
     }//GEN-LAST:event_factorialButtonActionPerformed
 
     private void logButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logButtonActionPerformed
         this.calcu.setValue1(Integer.parseInt(inputs.getText()));
         this.calcu.setOperand("log");
+        this.equalsActionPerformed(evt);
     }//GEN-LAST:event_logButtonActionPerformed
 
     /**

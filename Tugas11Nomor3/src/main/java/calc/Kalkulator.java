@@ -14,6 +14,18 @@ public class Kalkulator {
     private int value2;
     private String operand;
 
+    Kalkulator() {
+        this.value1=0;
+        this.value2=0;
+        this.operand="";
+    }
+
+    Kalkulator(int val1, int val2, String opr) {
+        this.value1=val1;
+        this.value2=val2;
+        this.operand=opr;
+    }
+
     public void setValue1(int value1) {
         this.value1 = value1;
     }
