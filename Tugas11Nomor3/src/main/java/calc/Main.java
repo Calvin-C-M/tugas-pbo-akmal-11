@@ -4,13 +4,14 @@
  * and open the template in the editor.
  */
 package calc;
+import java.lang.Math;
 
 /**
  *
  * @author Calvin C M
  */
 public class Main extends javax.swing.JFrame {
-
+    Kalkulator calcu;
     /**
      * Creates new form Main
      */
@@ -53,61 +54,181 @@ public class Main extends javax.swing.JFrame {
         rootButton = new javax.swing.JButton();
         factorialButton = new javax.swing.JButton();
         logButton = new javax.swing.JButton();
-        logButton1 = new javax.swing.JButton();
+        piButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         buttonOptions.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         number0.setText("0");
+        number0.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                number0ActionPerformed(evt);
+            }
+        });
 
         number1.setText("1");
+        number1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                number1ActionPerformed(evt);
+            }
+        });
 
         number2.setText("2");
+        number2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                number2ActionPerformed(evt);
+            }
+        });
 
         number3.setText("3");
+        number3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                number3ActionPerformed(evt);
+            }
+        });
 
         number4.setText("4");
+        number4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                number4ActionPerformed(evt);
+            }
+        });
 
         number5.setText("5");
+        number5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                number5ActionPerformed(evt);
+            }
+        });
 
         number6.setText("6");
+        number6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                number6ActionPerformed(evt);
+            }
+        });
 
         number7.setText("7");
+        number7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                number7ActionPerformed(evt);
+            }
+        });
 
         number8.setText("8");
+        number8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                number8ActionPerformed(evt);
+            }
+        });
 
         number9.setText("9");
+        number9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                number9ActionPerformed(evt);
+            }
+        });
 
         decimalButton.setText(".");
 
         equals.setText("=");
+        equals.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                equalsActionPerformed(evt);
+            }
+        });
 
         sinButton.setText("sin");
+        sinButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                sinButtonActionPerformed(evt);
+            }
+        });
 
         cosButton.setText("cos");
+        cosButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cosButtonActionPerformed(evt);
+            }
+        });
 
         tanButton.setText("tan");
+        tanButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tanButtonActionPerformed(evt);
+            }
+        });
 
         divideButton.setText("/");
+        divideButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                divideButtonActionPerformed(evt);
+            }
+        });
 
         multiplyButton.setText("x");
+        multiplyButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                multiplyButtonActionPerformed(evt);
+            }
+        });
 
         subtractButton.setText("-");
+        subtractButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                subtractButtonActionPerformed(evt);
+            }
+        });
 
         addButton.setText("+");
+        addButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addButtonActionPerformed(evt);
+            }
+        });
 
         clearButton.setText("C");
+        clearButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                clearButtonActionPerformed(evt);
+            }
+        });
 
         powerButton.setText("x^y");
+        powerButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                powerButtonActionPerformed(evt);
+            }
+        });
 
         rootButton.setText("√x");
+        rootButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rootButtonActionPerformed(evt);
+            }
+        });
 
         factorialButton.setText("x!");
+        factorialButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                factorialButtonActionPerformed(evt);
+            }
+        });
 
         logButton.setText("log");
+        logButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                logButtonActionPerformed(evt);
+            }
+        });
 
-        logButton1.setText("𝞹");
+        piButton.setText("𝞹");
+        piButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                piButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout buttonOptionsLayout = new javax.swing.GroupLayout(buttonOptions);
         buttonOptions.setLayout(buttonOptionsLayout);
@@ -135,7 +256,7 @@ public class Main extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(divideButton, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(logButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(piButton, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(buttonOptionsLayout.createSequentialGroup()
                         .addComponent(number4, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -205,7 +326,7 @@ public class Main extends javax.swing.JFrame {
                     .addComponent(decimalButton, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(equals, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(divideButton, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(logButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(piButton, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
 
@@ -232,6 +353,168 @@ public class Main extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void number0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_number0ActionPerformed
+        inputs.setText(inputs.getText() + "0");
+    }//GEN-LAST:event_number0ActionPerformed
+
+    private void number1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_number1ActionPerformed
+        inputs.setText(inputs.getText() + "1");
+    }//GEN-LAST:event_number1ActionPerformed
+
+    private void number2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_number2ActionPerformed
+        inputs.setText(inputs.getText() + "2");
+    }//GEN-LAST:event_number2ActionPerformed
+
+    private void number3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_number3ActionPerformed
+        inputs.setText(inputs.getText() + "3");
+    }//GEN-LAST:event_number3ActionPerformed
+
+    private void number4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_number4ActionPerformed
+        inputs.setText(inputs.getText() + "4");
+    }//GEN-LAST:event_number4ActionPerformed
+
+    private void number5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_number5ActionPerformed
+        inputs.setText(inputs.getText() + "5");
+    }//GEN-LAST:event_number5ActionPerformed
+
+    private void number6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_number6ActionPerformed
+        inputs.setText(inputs.getText() + "6");
+    }//GEN-LAST:event_number6ActionPerformed
+
+    private void number7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_number7ActionPerformed
+        inputs.setText(inputs.getText() + "7");
+    }//GEN-LAST:event_number7ActionPerformed
+
+    private void number8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_number8ActionPerformed
+        inputs.setText(inputs.getText() + "8");
+    }//GEN-LAST:event_number8ActionPerformed
+
+    private void number9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_number9ActionPerformed
+        inputs.setText(inputs.getText() + "9");
+    }//GEN-LAST:event_number9ActionPerformed
+
+    private void piButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_piButtonActionPerformed
+        inputs.setText(inputs.getText() + "𝜋");
+    }//GEN-LAST:event_piButtonActionPerformed
+
+    private void clearButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearButtonActionPerformed
+        inputs.setText("");
+    }//GEN-LAST:event_clearButtonActionPerformed
+
+    private void addButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addButtonActionPerformed
+        this.calcu.setValue1(Integer.parseInt(inputs.getText()));
+        this.calcu.setOperand("+");
+    }//GEN-LAST:event_addButtonActionPerformed
+
+    private void equalsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_equalsActionPerformed
+        this.calcu.setValue2(Integer.parseInt(inputs.getText()));
+        double number1=(double)this.calcu.getValue1();
+        double number2=(double)this.calcu.getValue2();
+        switch(this.calcu.getOperand()) {
+            case "+":
+                inputs.setText(String.valueOf(number1+number2));
+                break;
+                
+            case "-":
+                inputs.setText(String.valueOf(number1-number2));
+                break;
+                
+            case "X":
+                inputs.setText(String.valueOf(number1*number2));
+                break;
+                
+            case "/":
+                inputs.setText(String.valueOf(number1/number2));
+                break;
+                
+            case "^":
+                inputs.setText(String.valueOf(Math.pow(number1, number2)));
+                break;
+                
+            case "v":
+                inputs.setText(String.valueOf(Math.round(Math.pow(1.0/number1, number2))));
+                break;
+                
+            case "sin":
+                inputs.setText(String.valueOf(Math.sin(number1)));
+                break;
+                
+            case "cos":
+                inputs.setText(String.valueOf(Math.cos(number1)));
+                break;
+                
+            case "tan":
+                inputs.setText(String.valueOf(Math.tan(number1)));
+                break;
+                
+            case "log":
+                inputs.setText(String.valueOf(Math.log(number1)));
+                break;
+                
+            case "fac":
+                double fac=factorial(number1);
+                inputs.setText(String.valueOf(fac));
+                break;
+        }
+    }//GEN-LAST:event_equalsActionPerformed
+
+    public double factorial(double number) {
+        if(number >= 1) {
+            return number * factorial(number-1);
+        }
+        return 1;
+    }
+
+    private void subtractButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_subtractButtonActionPerformed
+        this.calcu.setValue1(Integer.parseInt(inputs.getText()));
+        this.calcu.setOperand("-");
+    }//GEN-LAST:event_subtractButtonActionPerformed
+
+    private void multiplyButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_multiplyButtonActionPerformed
+        this.calcu.setValue1(Integer.parseInt(inputs.getText()));
+        this.calcu.setOperand("X");
+    }//GEN-LAST:event_multiplyButtonActionPerformed
+
+    private void divideButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_divideButtonActionPerformed
+        this.calcu.setValue1(Integer.parseInt(inputs.getText()));
+        this.calcu.setOperand("/");
+    }//GEN-LAST:event_divideButtonActionPerformed
+
+    private void sinButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sinButtonActionPerformed
+        this.calcu.setValue1(Integer.parseInt(inputs.getText()));
+        this.calcu.setOperand("sin");
+    }//GEN-LAST:event_sinButtonActionPerformed
+
+    private void cosButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cosButtonActionPerformed
+        this.calcu.setValue1(Integer.parseInt(inputs.getText()));
+        this.calcu.setOperand("cos");
+    }//GEN-LAST:event_cosButtonActionPerformed
+
+    private void tanButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tanButtonActionPerformed
+        this.calcu.setValue1(Integer.parseInt(inputs.getText()));
+        this.calcu.setOperand("tan");
+    }//GEN-LAST:event_tanButtonActionPerformed
+
+    private void powerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_powerButtonActionPerformed
+        this.calcu.setValue1(Integer.parseInt(inputs.getText()));
+        this.calcu.setOperand("^");
+    }//GEN-LAST:event_powerButtonActionPerformed
+
+    private void rootButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rootButtonActionPerformed
+        this.calcu.setValue1(Integer.parseInt(inputs.getText()));
+        this.calcu.setOperand("v");
+    }//GEN-LAST:event_rootButtonActionPerformed
+
+    private void factorialButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_factorialButtonActionPerformed
+        this.calcu.setValue1(Integer.parseInt(inputs.getText()));
+        this.calcu.setOperand("fac");
+    }//GEN-LAST:event_factorialButtonActionPerformed
+
+    private void logButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logButtonActionPerformed
+        this.calcu.setValue1(Integer.parseInt(inputs.getText()));
+        this.calcu.setOperand("log");
+    }//GEN-LAST:event_logButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -279,7 +562,6 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JButton factorialButton;
     private javax.swing.JTextField inputs;
     private javax.swing.JButton logButton;
-    private javax.swing.JButton logButton1;
     private javax.swing.JButton multiplyButton;
     private javax.swing.JButton number0;
     private javax.swing.JButton number1;
@@ -291,6 +573,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JButton number7;
     private javax.swing.JButton number8;
     private javax.swing.JButton number9;
+    private javax.swing.JButton piButton;
     private javax.swing.JButton powerButton;
     private javax.swing.JButton rootButton;
     private javax.swing.JButton sinButton;
