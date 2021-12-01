@@ -79,11 +79,11 @@ public class Student {
     public char getHurufMutu(double nilai) {
         if(nilai > 80 && nilai <= 100) {
             return 'A';
-        } else if(nilai > 70 && nilai <= 80) {
+        } else if(nilai > 68 && nilai <= 80) {
             return 'B';
-        } else if(nilai > 60 && nilai <= 70) {
+        } else if(nilai > 55 && nilai <= 68) {
             return 'C';
-        } else if(nilai > 50 && nilai <= 60) {
+        } else if(nilai > 45 && nilai <= 55) {
             return 'D';
         }
         return 'E';
