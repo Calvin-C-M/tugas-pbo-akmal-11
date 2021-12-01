@@ -132,6 +132,11 @@ public class Main extends javax.swing.JFrame {
         });
 
         decimalButton.setText(".");
+        decimalButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                decimalButtonActionPerformed(evt);
+            }
+        });
 
         equals.setText("=");
         equals.addActionListener(new java.awt.event.ActionListener() {
@@ -408,7 +413,7 @@ public class Main extends javax.swing.JFrame {
         if(inputs.getText().equals("𝜋")) {
             this.calcu.setValue1(Math.PI);
         } else {
-            this.calcu.setValue1(Integer.parseInt(inputs.getText()));
+            this.calcu.setValue1(Double.parseDouble(inputs.getText()));
         }
         this.calcu.setOperand("+");
         inputs.setText("");
@@ -418,7 +423,7 @@ public class Main extends javax.swing.JFrame {
         if(inputs.getText().equals("𝜋")) {
             this.calcu.setValue2(Math.PI);
         } else {
-            this.calcu.setValue2(Integer.parseInt(inputs.getText()));
+            this.calcu.setValue2(Double.parseDouble(inputs.getText()));
         }
         double number1=(double)this.calcu.getValue1();
         double number2=(double)this.calcu.getValue2();
@@ -481,7 +486,7 @@ public class Main extends javax.swing.JFrame {
         if(inputs.getText().equals("𝜋")) {
             this.calcu.setValue1(Math.PI);
         } else {
-            this.calcu.setValue1(Integer.parseInt(inputs.getText()));
+            this.calcu.setValue1(Double.parseDouble(inputs.getText()));
         }
         this.calcu.setOperand("-");
         inputs.setText("");
@@ -491,7 +496,7 @@ public class Main extends javax.swing.JFrame {
         if(inputs.getText().equals("𝜋")) {
             this.calcu.setValue1(Math.PI);
         } else {
-            this.calcu.setValue1(Integer.parseInt(inputs.getText()));
+            this.calcu.setValue1(Double.parseDouble(inputs.getText()));
         }
         this.calcu.setOperand("X");
         inputs.setText("");
@@ -501,7 +506,7 @@ public class Main extends javax.swing.JFrame {
         if(inputs.getText().equals("𝜋")) {
             this.calcu.setValue1(Math.PI);
         } else {
-            this.calcu.setValue1(Integer.parseInt(inputs.getText()));
+            this.calcu.setValue1(Double.parseDouble(inputs.getText()));
         }
         this.calcu.setOperand("/");
         inputs.setText("");
@@ -511,7 +516,7 @@ public class Main extends javax.swing.JFrame {
         if(inputs.getText().equals("𝜋")) {
             this.calcu.setValue1(Math.PI);
         } else {
-            this.calcu.setValue1(Integer.parseInt(inputs.getText()));
+            this.calcu.setValue1(Double.parseDouble(inputs.getText()));
         }
         this.calcu.setOperand("sin");
         this.equalsActionPerformed(evt);
@@ -521,7 +526,7 @@ public class Main extends javax.swing.JFrame {
         if(inputs.getText().equals("𝜋")) {
             this.calcu.setValue1(Math.PI);
         } else {
-            this.calcu.setValue1(Integer.parseInt(inputs.getText()));
+            this.calcu.setValue1(Double.parseDouble(inputs.getText()));
         }
         this.calcu.setOperand("cos");
         this.equalsActionPerformed(evt);
@@ -531,7 +536,7 @@ public class Main extends javax.swing.JFrame {
         if(inputs.getText().equals("𝜋")) {
             this.calcu.setValue1(Math.PI);
         } else {
-            this.calcu.setValue1(Integer.parseInt(inputs.getText()));
+            this.calcu.setValue1(Double.parseDouble(inputs.getText()));
         }
         this.calcu.setOperand("tan");
         this.equalsActionPerformed(evt);
@@ -541,7 +546,7 @@ public class Main extends javax.swing.JFrame {
         if(inputs.getText().equals("𝜋")) {
             this.calcu.setValue1(Math.PI);
         } else {
-            this.calcu.setValue1(Integer.parseInt(inputs.getText()));
+            this.calcu.setValue1(Double.parseDouble(inputs.getText()));
         }
         this.calcu.setOperand("^");
         inputs.setText("");
@@ -551,7 +556,7 @@ public class Main extends javax.swing.JFrame {
         if(inputs.getText().equals("𝜋")) {
             this.calcu.setValue1(Math.PI);
         } else {
-            this.calcu.setValue1(Integer.parseInt(inputs.getText()));
+            this.calcu.setValue1(Double.parseDouble(inputs.getText()));
         }
         this.calcu.setOperand("v");
         inputs.setText("");
@@ -561,7 +566,7 @@ public class Main extends javax.swing.JFrame {
         if(inputs.getText().equals("𝜋")) {
             this.calcu.setValue1(Math.PI);
         } else {
-            this.calcu.setValue1(Integer.parseInt(inputs.getText()));
+            this.calcu.setValue1(Double.parseDouble(inputs.getText()));
         }
         this.calcu.setOperand("fac");
         this.equalsActionPerformed(evt);
@@ -571,11 +576,19 @@ public class Main extends javax.swing.JFrame {
         if(inputs.getText().equals("𝜋")) {
             this.calcu.setValue1(Math.PI);
         } else {
-            this.calcu.setValue1(Integer.parseInt(inputs.getText()));
+            this.calcu.setValue1(Double.parseDouble(inputs.getText()));
         }
         this.calcu.setOperand("log");
         this.equalsActionPerformed(evt);
     }//GEN-LAST:event_logButtonActionPerformed
+
+    private void decimalButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_decimalButtonActionPerformed
+        if(inputs.getText().equals("")) {
+            inputs.setText("0.");
+        } else {
+            inputs.setText(inputs.getText() + ".");
+        }
+    }//GEN-LAST:event_decimalButtonActionPerformed
 
     /**
      * @param args the command line arguments
