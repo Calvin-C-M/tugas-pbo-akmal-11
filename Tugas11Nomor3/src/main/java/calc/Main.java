@@ -5,6 +5,7 @@
  */
 package calc;
 import java.lang.Math;
+import java.awt.event.KeyEvent;
 
 /**
  *
@@ -58,6 +59,12 @@ public class Main extends javax.swing.JFrame {
         piButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        inputs.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                inputsKeyPressed(evt);
+            }
+        });
 
         buttonOptions.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
@@ -589,6 +596,50 @@ public class Main extends javax.swing.JFrame {
             inputs.setText(inputs.getText() + ".");
         }
     }//GEN-LAST:event_decimalButtonActionPerformed
+
+    private void inputsKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_inputsKeyPressed
+        switch(evt.getKeyCode()) {
+            case java.awt.event.KeyEvent.VK_PLUS:
+                if(inputs.getText().equals("𝜋")) {
+                    this.calcu.setValue1(Math.PI);
+                } else {
+                    this.calcu.setValue1(Double.parseDouble(inputs.getText()));
+                }
+                this.calcu.setOperand("+");
+                inputs.setText("");
+                break;
+
+            case java.awt.event.KeyEvent.VK_MINUS:
+                if(inputs.getText().equals("𝜋")) {
+                    this.calcu.setValue1(Math.PI);
+                } else {
+                    this.calcu.setValue1(Double.parseDouble(inputs.getText()));
+                }
+                this.calcu.setOperand("-");
+                inputs.setText("");
+                break;
+
+            case java.awt.event.KeyEvent.VK_X:
+                if(inputs.getText().equals("𝜋")) {
+                    this.calcu.setValue1(Math.PI);
+                } else {
+                    this.calcu.setValue1(Double.parseDouble(inputs.getText()));
+                }
+                this.calcu.setOperand("X");
+                inputs.setText("");
+                break;
+
+            case java.awt.event.KeyEvent.VK_SLASH:
+                if(inputs.getText().equals("𝜋")) {
+                    this.calcu.setValue1(Math.PI);
+                } else {
+                    this.calcu.setValue1(Double.parseDouble(inputs.getText()));
+                }
+                this.calcu.setOperand("/");
+                inputs.setText("");
+                break;                
+        }
+    }//GEN-LAST:event_inputsKeyPressed
 
     /**
      * @param args the command line arguments
