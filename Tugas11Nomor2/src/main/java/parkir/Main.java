@@ -4,9 +4,9 @@
  * and open the template in the editor.
  */
 package parkir;
+import java.lang.Math;
 import java.time.Clock;
 import java.time.LocalTime;
-
 import javax.swing.JOptionPane;
 
 /**
@@ -352,11 +352,19 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_resetButtonActionPerformed
 
     private void waktuSekarangMasukActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_waktuSekarangMasukActionPerformed
-        inputJamMasuk.setText(String.valueOf(LocalTime.now()));
+        String[] jamMasuk=String.valueOf(LocalTime.now()).split(":");
+        
+        double detik=Double.parseDouble(jamMasuk[2]);
+        int temp=(int)Math.ceil(detik);
+        inputJamMasuk.setText(jamMasuk[0]+":"+jamMasuk[1]+":"+temp);
     }//GEN-LAST:event_waktuSekarangMasukActionPerformed
 
     private void waktuSekarangKeluarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_waktuSekarangKeluarActionPerformed
-        inputJamKeluar.setText(String.valueOf(LocalTime.now()));
+        String[] jamKeluar=String.valueOf(LocalTime.now()).split(":");
+        
+        double detik=Double.parseDouble(jamKeluar[2]);
+        int temp=(int)Math.ceil(detik);
+        inputJamKeluar.setText(jamKeluar[0]+":"+jamKeluar[1]+":"+temp);
     }//GEN-LAST:event_waktuSekarangKeluarActionPerformed
 
     public boolean formatWaktuIsInvalid(Waktu waktu) {
