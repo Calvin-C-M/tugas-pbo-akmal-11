@@ -4,7 +4,8 @@
  * and open the template in the editor.
  */
 package parkir;
-import java.util.Arrays;
+import java.time.Clock;
+import java.time.LocalTime;
 
 import javax.swing.JOptionPane;
 
@@ -43,6 +44,8 @@ public class Main extends javax.swing.JFrame {
         inputJamKeluar = new javax.swing.JTextField();
         cekBiayaButton = new javax.swing.JButton();
         resetButton = new javax.swing.JButton();
+        waktuSekarangMasuk = new javax.swing.JButton();
+        waktuSekarangKeluar = new javax.swing.JButton();
         hasilBox = new javax.swing.JPanel();
         labelHasilNoKendaraan = new javax.swing.JLabel();
         labelHasilJenisKendaraan = new javax.swing.JLabel();
@@ -107,6 +110,20 @@ public class Main extends javax.swing.JFrame {
             }
         });
 
+        waktuSekarangMasuk.setText("Waktu Sekarang");
+        waktuSekarangMasuk.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                waktuSekarangMasukActionPerformed(evt);
+            }
+        });
+
+        waktuSekarangKeluar.setText("Waktu Sekarang");
+        waktuSekarangKeluar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                waktuSekarangKeluarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout formBoxLayout = new javax.swing.GroupLayout(formBox);
         formBox.setLayout(formBoxLayout);
         formBoxLayout.setHorizontalGroup(
@@ -120,15 +137,20 @@ public class Main extends javax.swing.JFrame {
                     .addComponent(labelInputJamKeluar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(formBoxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(formBoxLayout.createSequentialGroup()
-                        .addComponent(cekBiayaButton)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(resetButton)
-                        .addGap(0, 202, Short.MAX_VALUE))
                     .addComponent(inputNoKendaraan)
                     .addComponent(inputJenisKendaraan, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(inputJamMasuk)
-                    .addComponent(inputJamKeluar))
+                    .addGroup(formBoxLayout.createSequentialGroup()
+                        .addGroup(formBoxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(inputJamMasuk, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 235, Short.MAX_VALUE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, formBoxLayout.createSequentialGroup()
+                                .addComponent(cekBiayaButton)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(resetButton))
+                            .addComponent(inputJamKeluar, javax.swing.GroupLayout.Alignment.LEADING))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
+                        .addGroup(formBoxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(waktuSekarangMasuk, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(waktuSekarangKeluar, javax.swing.GroupLayout.Alignment.TRAILING))))
                 .addContainerGap())
         );
         formBoxLayout.setVerticalGroup(
@@ -145,11 +167,14 @@ public class Main extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(formBoxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(labelInputJamMasuk)
-                    .addComponent(inputJamMasuk, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(inputJamMasuk, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(waktuSekarangMasuk))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(formBoxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(labelInputJamKeluar)
-                    .addComponent(inputJamKeluar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(formBoxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(inputJamKeluar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(waktuSekarangKeluar)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(formBoxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cekBiayaButton)
@@ -326,6 +351,14 @@ public class Main extends javax.swing.JFrame {
         inputNoKendaraan.requestFocus();
     }//GEN-LAST:event_resetButtonActionPerformed
 
+    private void waktuSekarangMasukActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_waktuSekarangMasukActionPerformed
+        inputJamMasuk.setText(String.valueOf(LocalTime.now()));
+    }//GEN-LAST:event_waktuSekarangMasukActionPerformed
+
+    private void waktuSekarangKeluarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_waktuSekarangKeluarActionPerformed
+        inputJamKeluar.setText(String.valueOf(LocalTime.now()));
+    }//GEN-LAST:event_waktuSekarangKeluarActionPerformed
+
     public boolean formatWaktuIsInvalid(Waktu waktu) {
         return (
             (waktu.getJam() < 0 || waktu.getJam() > 24)
@@ -418,5 +451,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel labelInputJenisKendaraan;
     private javax.swing.JLabel labelInputNoKendaraan;
     private javax.swing.JButton resetButton;
+    private javax.swing.JButton waktuSekarangKeluar;
+    private javax.swing.JButton waktuSekarangMasuk;
     // End of variables declaration//GEN-END:variables
 }

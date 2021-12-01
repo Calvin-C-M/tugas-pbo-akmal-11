@@ -75,7 +75,9 @@ public class Parkir {
     public double getBiayaParkir() {
         Waktu lamaParkir=this.getLamaParkir();
         double totalJam=lamaParkir.getJam();
-        totalJam += (lamaParkir.getMenit() > 0) ? 1 : 0;
+        double totalMenit=lamaParkir.getMenit();
+        totalMenit += (lamaParkir.getDetik() > 0) ? 1 : 0;
+        totalJam += (totalMenit > 0) ? 1 : 0;
         switch(this.jenisKendaraan) {
             case "Mobil": return totalJam*3000;
             case "Motor": return totalJam*2000;
