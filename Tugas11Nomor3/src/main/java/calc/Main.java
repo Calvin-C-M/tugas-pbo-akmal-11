@@ -456,7 +456,8 @@ public class Main extends javax.swing.JFrame {
                 break;
                 
             case "v":
-                inputs.setText(String.valueOf(Math.round(Math.pow(1.0/number1, number2))));
+                double root=Math.pow(number2, 1.0/number1);
+                inputs.setText(String.valueOf(root));
                 break;
                 
             case "sin":
