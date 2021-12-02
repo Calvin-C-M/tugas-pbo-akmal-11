@@ -59,13 +59,17 @@ public class Main extends javax.swing.JFrame {
         piButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Scientific Calculator");
+        setBackground(new java.awt.Color(0, 51, 102));
 
+        inputs.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
         inputs.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 inputsKeyPressed(evt);
             }
         });
 
+        buttonOptions.setBackground(new java.awt.Color(0, 102, 102));
         buttonOptions.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         number0.setText("0");
@@ -145,6 +149,7 @@ public class Main extends javax.swing.JFrame {
             }
         });
 
+        equals.setBackground(new java.awt.Color(204, 102, 0));
         equals.setText("=");
         equals.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -152,6 +157,7 @@ public class Main extends javax.swing.JFrame {
             }
         });
 
+        sinButton.setBackground(new java.awt.Color(51, 51, 51));
         sinButton.setText("sin");
         sinButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -159,6 +165,7 @@ public class Main extends javax.swing.JFrame {
             }
         });
 
+        cosButton.setBackground(new java.awt.Color(51, 51, 51));
         cosButton.setText("cos");
         cosButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -166,6 +173,7 @@ public class Main extends javax.swing.JFrame {
             }
         });
 
+        tanButton.setBackground(new java.awt.Color(51, 51, 51));
         tanButton.setText("tan");
         tanButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -173,6 +181,7 @@ public class Main extends javax.swing.JFrame {
             }
         });
 
+        divideButton.setBackground(new java.awt.Color(204, 102, 0));
         divideButton.setText("/");
         divideButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -180,6 +189,7 @@ public class Main extends javax.swing.JFrame {
             }
         });
 
+        multiplyButton.setBackground(new java.awt.Color(204, 102, 0));
         multiplyButton.setText("x");
         multiplyButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -187,6 +197,7 @@ public class Main extends javax.swing.JFrame {
             }
         });
 
+        subtractButton.setBackground(new java.awt.Color(204, 102, 0));
         subtractButton.setText("-");
         subtractButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -194,6 +205,7 @@ public class Main extends javax.swing.JFrame {
             }
         });
 
+        addButton.setBackground(new java.awt.Color(204, 102, 0));
         addButton.setText("+");
         addButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -201,6 +213,7 @@ public class Main extends javax.swing.JFrame {
             }
         });
 
+        clearButton.setBackground(new java.awt.Color(51, 51, 51));
         clearButton.setText("C");
         clearButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -208,6 +221,7 @@ public class Main extends javax.swing.JFrame {
             }
         });
 
+        powerButton.setBackground(new java.awt.Color(51, 51, 51));
         powerButton.setText("x^y");
         powerButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -215,6 +229,7 @@ public class Main extends javax.swing.JFrame {
             }
         });
 
+        rootButton.setBackground(new java.awt.Color(51, 51, 51));
         rootButton.setText("√x");
         rootButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -222,6 +237,7 @@ public class Main extends javax.swing.JFrame {
             }
         });
 
+        factorialButton.setBackground(new java.awt.Color(51, 51, 51));
         factorialButton.setText("x!");
         factorialButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -229,6 +245,7 @@ public class Main extends javax.swing.JFrame {
             }
         });
 
+        logButton.setBackground(new java.awt.Color(51, 51, 51));
         logButton.setText("log");
         logButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -236,6 +253,7 @@ public class Main extends javax.swing.JFrame {
             }
         });
 
+        piButton.setBackground(new java.awt.Color(51, 51, 51));
         piButton.setText("𝞹");
         piButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -457,19 +475,19 @@ public class Main extends javax.swing.JFrame {
                 
             case "v":
                 double root=Math.pow(number2, 1.0/number1);
-                inputs.setText(String.valueOf(root));
+                inputs.setText(String.valueOf(Math.round(root)));
                 break;
                 
             case "sin":
-                inputs.setText(String.valueOf(Math.sin(number1)));
+                inputs.setText(String.valueOf(Math.sin(Math.toRadians(number1))));
                 break;
                 
             case "cos":
-                inputs.setText(String.valueOf(Math.cos(number1)));
+                inputs.setText(String.valueOf(Math.cos(Math.toRadians(number1))));
                 break;
                 
             case "tan":
-                inputs.setText(String.valueOf(Math.tan(number1)));
+                inputs.setText(String.valueOf(Math.tan(Math.toRadians(number1))));
                 break;
                 
             case "log":
@@ -600,7 +618,7 @@ public class Main extends javax.swing.JFrame {
 
     private void inputsKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_inputsKeyPressed
         switch(evt.getKeyCode()) {
-            case java.awt.event.KeyEvent.VK_PLUS:
+            case java.awt.event.KeyEvent.VK_SHIFT + java.awt.event.KeyEvent.VK_PLUS:
                 if(inputs.getText().equals("𝜋")) {
                     this.calcu.setValue1(Math.PI);
                 } else {
